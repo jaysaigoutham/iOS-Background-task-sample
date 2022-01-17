@@ -39,37 +39,42 @@
                                     <action selector="onUploadClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="COx-de-YBc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3s-di-yIQ">
-                                <rect key="frame" x="132" y="315" width="150" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="FBQ-0T-UT0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umB-FU-uTA">
-                                <rect key="frame" x="170.5" y="286" width="73" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av2-Cf-M8V">
+                                <rect key="frame" x="85" y="539" width="244" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Initiate - HTTP Client Task"/>
+                                <connections>
+                                    <action selector="onHTTPClientTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KYI-jT-cI0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNZ-7i-6tY">
+                                <rect key="frame" x="119.5" y="495" width="175" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Initiate - Data Task">
+                                    <color key="titleColor" systemColor="systemPurpleColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDataTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1MI-RT-aHB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="a3s-di-yIQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C1B-9E-DAw"/>
+                            <constraint firstItem="av2-Cf-M8V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3G3-6a-y1g"/>
                             <constraint firstItem="qCk-6q-W9O" firstAttribute="centerX" secondItem="fuB-9X-cmd" secondAttribute="centerX" id="Kcu-1X-BFA"/>
                             <constraint firstItem="fuB-9X-cmd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UTZ-2t-qnX"/>
-                            <constraint firstItem="a3s-di-yIQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-116" id="ibQ-qj-dkP"/>
-                            <constraint firstItem="a3s-di-yIQ" firstAttribute="top" secondItem="umB-FU-uTA" secondAttribute="bottom" constant="8" symbolic="YES" id="umO-25-eVT"/>
+                            <constraint firstItem="qCk-6q-W9O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="343" id="WWo-R3-mJG"/>
+                            <constraint firstItem="aNZ-7i-6tY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YIM-ws-slh"/>
+                            <constraint firstItem="aNZ-7i-6tY" firstAttribute="top" secondItem="fuB-9X-cmd" secondAttribute="bottom" constant="20" id="iRQ-Ef-EBn"/>
                             <constraint firstItem="fuB-9X-cmd" firstAttribute="top" secondItem="qCk-6q-W9O" secondAttribute="bottom" constant="16" id="vVn-lV-Ahf"/>
-                            <constraint firstItem="umB-FU-uTA" firstAttribute="centerX" secondItem="a3s-di-yIQ" secondAttribute="centerX" id="vqH-Z9-qav"/>
-                            <constraint firstItem="qCk-6q-W9O" firstAttribute="top" secondItem="a3s-di-yIQ" secondAttribute="bottom" constant="38" id="wbz-YD-fAG"/>
+                            <constraint firstItem="av2-Cf-M8V" firstAttribute="top" secondItem="aNZ-7i-6tY" secondAttribute="bottom" constant="8" id="zrN-qY-e6U"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnDataUpload" destination="aNZ-7i-6tY" id="13v-Nc-5pp"/>
                         <outlet property="btnDownload" destination="qCk-6q-W9O" id="Uj3-Sg-Gf6"/>
+                        <outlet property="btnHttpClient" destination="av2-Cf-M8V" id="Hhm-0T-dUc"/>
                         <outlet property="btnUpload" destination="fuB-9X-cmd" id="GCc-Yd-lgO"/>
-                        <outlet property="txtFldAPIDelay" destination="a3s-di-yIQ" id="sgb-1B-uSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,11 +83,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

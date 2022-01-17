@@ -35,12 +35,22 @@ namespace OfflineSyncSample
 
         partial void onDownloadClick(Foundation.NSObject sender)
         {
-            var result = appDelegate.SyncManager.DownloadDataSample();
+            var result = appDelegate.SyncManager.NewDownloadTask();
         }
 
         partial void onUploadClick(Foundation.NSObject sender)
         {
-            var result = appDelegate.SyncManager.UploadDataSampleAsync();
+            var result = appDelegate.SyncManager.NewUploadTask();
+        }
+
+        partial void onDataTask(Foundation.NSObject sender)
+        {
+            var result = appDelegate.SyncManager.NewDataTask();
+        }
+
+        partial void onHTTPClientTask(Foundation.NSObject sender)
+        {
+            var result = appDelegate.SyncManager.NewHTTPClientTask();
         }
     }
 }

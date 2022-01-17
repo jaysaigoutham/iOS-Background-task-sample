@@ -13,16 +13,25 @@ namespace OfflineSyncSample
 	partial class ViewController
 	{
 		[Outlet]
+		UIKit.UIButton btnDataUpload { get; set; }
+
+		[Outlet]
 		UIKit.UIButton btnDownload { get; set; }
+
+		[Outlet]
+		UIKit.UIButton btnHttpClient { get; set; }
 
 		[Outlet]
 		UIKit.UIButton btnUpload { get; set; }
 
-		[Outlet]
-		UIKit.UITextField txtFldAPIDelay { get; set; }
+		[Action ("onDataTask:")]
+		partial void onDataTask (Foundation.NSObject sender);
 
 		[Action ("onDownloadClick:")]
 		partial void onDownloadClick (Foundation.NSObject sender);
+
+		[Action ("onHTTPClientTask:")]
+		partial void onHTTPClientTask (Foundation.NSObject sender);
 
 		[Action ("onUploadClick:")]
 		partial void onUploadClick (Foundation.NSObject sender);
@@ -39,9 +48,14 @@ namespace OfflineSyncSample
 				btnUpload = null;
 			}
 
-			if (txtFldAPIDelay != null) {
-				txtFldAPIDelay.Dispose ();
-				txtFldAPIDelay = null;
+			if (btnDataUpload != null) {
+				btnDataUpload.Dispose ();
+				btnDataUpload = null;
+			}
+
+			if (btnHttpClient != null) {
+				btnHttpClient.Dispose ();
+				btnHttpClient = null;
 			}
 		}
 	}

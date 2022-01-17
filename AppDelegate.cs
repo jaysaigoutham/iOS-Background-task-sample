@@ -6,6 +6,7 @@ using UIKit;
 using OfflineSyncSample.Manager.Sync;
 using OfflineSyncSample.Manager.Notification;
 using static OfflineSyncSample.Utiliies.Enums;
+using Xamarin.Essentials;
 
 namespace OfflineSyncSample
 {
@@ -66,7 +67,21 @@ namespace OfflineSyncSample
                 application.RegisterUserNotificationSettings(notificationSettings);
             }
 
+            Connectivity.ConnectivityChanged += DidConnectivityChange;
+
             return true;
+        }
+
+        async void DidConnectivityChange(object sender, ConnectivityChangedEventArgs e)
+        {
+            if(e.NetworkAccess == NetworkAccess.Internet)
+            {
+                //start a task
+                //var result = await this.SyncManager.NewDownloadTask();
+
+                //Get all task
+                var tasks = this.syncManager.SyncSession.GetAllTasksAsync().Result;
+            }
         }
 
         [Export("application:performFetchWithCompletionHandler:")]
